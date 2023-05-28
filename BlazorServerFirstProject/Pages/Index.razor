@@ -1,8 +1,25 @@
 ﻿@page "/"
-
+@using BlazorServerFirstProject.Data
+@using Microsoft.Extensions.Logging
+@inject IDummyDataAccess db
+@inject ILogger<Index> logger
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+Your new random number is @db.GetUserAge().
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        int id = 25;
+        logger.LogInformation("Index.razor.cs: Index() constructor called on id #{userId}.",id);
+    }
+    
+}
+
 
