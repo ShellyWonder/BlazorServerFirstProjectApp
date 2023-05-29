@@ -1,4 +1,4 @@
-namespace BlazorServerFirstProject.Data
+namespace BlazorServerFirstProject.Services
 {
     public class WeatherForecast
     {
